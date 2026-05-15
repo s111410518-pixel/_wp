@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmy | CS2 & Game Dev Portfolio</title>
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --panel: #161b22;
+            --accent: #ff9a00; /* CS2 經典橘色 */
+            --text: #e6edf3;
+            --subtext: #8b949e;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            padding: 80px 0;
+            background: linear-gradient(rgba(11, 14, 20, 0.8), rgba(11, 14, 20, 0.8)), 
+                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+        }
+        h1 { font-size: 3rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .highlight { color: var(--accent); }
+        .container { max-width: 800px; width: 90%; margin-top: -40px; }
+        section {
+            background: var(--panel);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #30363d;
+        }
+        h2 { border-left: 4px solid var(--accent); padding-left: 15px; margin-top: 0; }
+        .skill-tag {
+            display: inline-block;
+            background: #21262d;
+            border: 1px solid var(--accent);
+            padding: 5px 12px;
+            border-radius: 4px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        .cs2-badge {
+            background: rgba(255, 154, 0, 0.1);
+            color: var(--accent);
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        a { color: var(--accent); text-decoration: none; font-weight: bold; }
+        footer { margin: 40px 0; color: var(--subtext); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Jimmy <span class="highlight">CS2</span> Developer</h1>
+    <p>國立金門大學資工系 | 專注底層邏輯與遊戲開發</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2>關於我</h2>
+        <p>
+            我是 Jimmy，一名就讀於金門大學資工系的學生。我是 <span class="highlight">CS2</span> 的忠實玩家，這款遊戲讓我對高效率的網路同步（Tickrate）、精準的碰撞偵測以及反作弊系統產生了濃厚的開發興趣。
+        </p>
+        <div class="cs2-badge">
+            🕹️ 當前目標：研究 Source 2 引擎架構與 C++ 性能優化
+        </div>
+    </section>
+
+    <section>
+        <h2>技術與工具</h2>
+        <div class="skill-tag">C++ (System Dev)</div>
+        <div class="skill-tag">Python (Data Analysis)</div>
+        <div class="skill-tag">Git / GitHub</div>
+        <div class="skill-tag">Algorithm Optimization</div>
+        <div class="skill-tag">Linux Shell</div>
+    </section>
+
+    <section>
+        <h2>興趣領域</h2>
+        <ul>
+            <li><strong>遊戲引擎運作：</strong> 探索物理引擎如何處理高頻率的子彈彈道計算。</li>
+            <li><strong>電競數據統計：</strong> 透過分析遊戲 Demo 檔數據來優化戰術配置。</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>聯絡與連結</h2>
+        <p>🔗 GitHub: <a href="https://github.com/你的帳號名稱" target="_blank">github.com/你的帳號名稱</a></p>
+        <p>📧 Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    </section>
+</div>
+
+<footer>
+    &copy; 2026 Jimmy. Powered by Gold Island Tech.
+</footer>
+
+</body>
+</html>
