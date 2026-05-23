@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綜合問卷調查表單</title>
+    <style>
+        /* 簡單的內建樣式，讓表單看起來乾淨美觀 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            background: #fff;
+            padding: 30px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>顧客滿意度與基本資料問卷</h2>
+    <p>感謝您抽空填寫此問卷，您的意見對我們非常重要。</p>
+    <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+
+    <!-- 
+      form 標籤屬性說明：
+      - action: 表單提交後資料要傳送到的後端網頁位址（此處先用 # 代替）
+      - method: 提交資料的方式，常見的有 "post"（安全、適合傳送大量或隱私資料）與 "get"（資料會顯示在網址列）
+    -->
+    <form action="#" method="POST">
+
+        <!-- 1. 姓名 (文字輸入框 text) -->
+        <div class="form-group">
+            <!-- label 的 for 屬性與 input 的 id 對應，點擊文字時會自動聚焦到輸入框 -->
+            <label Pis="username">1. 姓名：</label>
+            <!-- required 屬性代表此欄位為必填 -->
+            <input type="text" id="username" name="username" class="form-control" placeholder="請輸入您的真實姓名" required>
+        </div>
+
+        <!-- 2. 電子郵件 (Email輸入框 email) -->
+        <div class="form-group">
+            <label for="useremail">2. 電子郵件：</label>
+            <!-- type="email" 會在手機版自動切換成帶有 @ 的鍵盤，並在提交時自動驗證格式是否正確 -->
+            <input type="email" id="useremail" name="useremail" class="form-control" placeholder="example@email.com" required>
+        </div>
+
+        <!-- 3. 電話 (電話輸入框 tel) -->
+        <div class="form-group">
+            <label for="userphone">3. 聯絡電話：</label>
+            <!-- type="tel" 在行動裝置上會自動彈出數字鍵盤 -->
+            <input type="tel" id="userphone" name="userphone" class="form-control" placeholder="0912-345678" required>
+        </div>
+
+        <!-- 4. 性別選項 (單選按鈕 radio) -->
+        <div class="form-group">
+            <label>4. 性別：</label>
+            <div class="radio-group">
+                <!-- 同一組單選按鈕的 name 屬性必須完全相同（例如都是 gender），這樣才能達到「多選一」的效果 -->
+                <input type="radio" id="gender-male" name="gender" value="male" checked>
+                <label for="gender-male">男</label>
+
+                <input type="radio" id="gender-female" name="gender" value="female">
+                <label for="gender-female">女</label>
+
+                <input type="radio" id="gender-other" name="gender" value="other">
+                <label for="gender-other">其他 / 不便透露</label>
+            </div>
+        </div>
+
+        <!-- 5. 生日 (日期選擇器 date) -->
+        <div class="form-group">
+            <label for="userbirth">5. 出生日期：</label>
+            <!-- type="date" 會提供內建的日曆彈出視窗讓使用者選擇日期 -->
+            <input type="date" id="userbirth" name="userbirth" class="form-control" required>
+        </div>
+
+        <!-- 6. 職業 (下拉選單 select) -->
+        <div class="form-group">
+            <label for="userjob">6. 您目前的職業：</label>
+            <!-- select 為下拉選單標籤 -->
+            <select id="userjob" name="userjob" class="form-control" required>
+                <!-- value="" 且設定 disabled selected，可以作為提示用的預設選項 -->
+                <option value="" disabled selected>-- 請選擇您的職業 --</option>
+                <option value="student">學生</option>
+                <option value="technology">科技資訊業</option>
+                <option value="service">餐飲服務業</option>
+                <option value="finance">金融保險業</option>
+                <option value="freelancer">自由工作者</option>
+                <option value="other">其他</option>
+            </select>
+        </div>
+
+        <!-- 7. 額外擴充：感興趣的內容 (複選框 checkbox) -->
+        <div class="form-group">
+            <label>7. 您對我們哪些主題最感興趣？（可多選）</label>
+            <div class="checkbox-group">
+                <!-- 複選框的 name 建議可以使用陣列形式（如 interests[]），方便後端程式接收多個值 -->
+                <input type="checkbox" id="interest-tech" name="interests[]" value="tech">
+                <label for="interest-tech">科技新知</label>
+
+                <input type="checkbox" id="interest-design" name="interests[]" value="design">
+                <label for="interest-design">網頁設計</label>
+
+                <input type="checkbox" id="interest-finance" name="interests[]" value="finance">
+                <label for="interest-finance">投資理財</label>
+            </div>
+        </div>
+
+        <!-- 8. 額外擴充：意見回饋 (多行文字輸入框 textarea) -->
+        <div class="form-group">
+            <label for="feedback">8. 其他意見或備註：</label>
+            <!-- rows 屬性控制文字框的預設行高（高度） -->
+            <textarea id="feedback" name="feedback" class="form-control" rows="4" placeholder="請留下您寶貴的建議..."></textarea>
+        </div>
+
+        <!-- 9. 表單提交按鈕 (submit) -->
+        <!-- type="submit" 會觸發 form 的 action，將所有輸入的資料送出 -->
+        <button type="submit" class="btn-submit">提交問卷</button>
+
+    </form>
+</div>
+
+</body>
+</html>
