@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>小恐龍跳躍遊戲 (附線上排行榜)</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f7f7f7; margin: 0; }
+        .game-container { display: flex; gap: 20px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        canvas { background: #fafafa; border: 2px solid #333; border-radius: 4px; }
+        .leaderboard-box { width: 200px; border-left: 2px solid #eee; padding-left: 20px; }
+        h3 { margin-top: 0; color: #333; }
+        ol { padding-left: 20px; line-height: 1.8; }
+    </style>
+</head>
+<body>
+
+<div class="game-container">
+    <div>
+        <canvas id="gameCanvas" width="600" height="200"></canvas>
+        <p style="text-align: center; color: #666;">按 <b>【空白鍵】</b> 或 <b>【點擊畫面】</b> 跳躍</p>
+    </div>
+    
+    <div class="leaderboard-box">
+        <h3>🏆 世界排行榜</h3>
+        <ol id="leaderboardView">載入中...</ol>
+    </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
