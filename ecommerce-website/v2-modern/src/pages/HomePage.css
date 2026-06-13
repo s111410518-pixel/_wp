@@ -1,0 +1,83 @@
+.home { animation: fadeIn 0.5s ease; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 24px;
+  padding: 64px 48px;
+  margin-bottom: 48px;
+  color: #fff;
+  text-align: center;
+}
+
+.hero h1 { font-size: 2.8rem; margin-bottom: 12px; }
+
+.hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 28px; }
+
+.hero-btn {
+  display: inline-block;
+  background: #fff;
+  color: #667eea;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.section-title {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  color: #2d3436;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.featured-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+
+.featured-card:hover { transform: translateY(-4px); }
+
+.featured-icon { font-size: 3rem; display: block; margin-bottom: 12px; }
+
+.featured-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+
+.featured-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 16px;
+}
+
+.featured-card .add-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.featured-card .add-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+}

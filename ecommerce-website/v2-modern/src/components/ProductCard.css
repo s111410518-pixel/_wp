@@ -1,0 +1,65 @@
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(102,126,234,0.15);
+}
+
+.card:hover::before { opacity: 1; }
+
+.card-icon { font-size: 3.5rem; display: block; margin-bottom: 12px; }
+
+.card-name { font-size: 1.1rem; margin-bottom: 6px; color: #2d3436; }
+
+.card-desc {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.card-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 16px;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  width: 100%;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.add-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+}

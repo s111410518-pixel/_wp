@@ -1,0 +1,45 @@
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(102,126,234,0.3);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo { font-size: 1.6rem; font-weight: 800; letter-spacing: 1px; }
+
+.nav { display: flex; gap: 8px; align-items: center; }
+
+.nav a {
+  color: rgba(255,255,255,0.85);
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.nav a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+.nav a.active { background: rgba(255,255,255,0.2); color: #fff; }
+
+.cart-link { position: relative; }
+
+.badge {
+  background: #ff6b6b;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  margin-left: 4px;
+  font-weight: 700;
+}
